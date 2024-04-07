@@ -49,6 +49,19 @@ class Demo{
     int power = a*powern_1;
     return power;
   }
+  public static int print_power(int x,int n){
+    if(x==0){
+      return 0;
+    }
+    if(n==0){
+      return 1;
+    }
+    if(n%2==0){
+      return print_power(x,n/2)*print_power(x,n/2);
+    }else{
+      return print_power(x,n/2)*print_power(x,n/2)*x;
+    }
+  }
 }
 public class Main {
   public static void main(String[] args) {
@@ -67,8 +80,11 @@ public class Main {
     obj.print_fibo(0,1,10-2);
     //print x^n (Height= n)
     System.out.println("print x^n \n"+obj.cal_power(2,5));
+    // PRINT X^N (HEIGHT= logn)
+  //log2 x = n^alfa
+   System.out.println("x^n \n"+obj.print_power(2,5));
   }
-
+  
   // @Test
   // void addition() {
   //     assertEquals(2, 1 + 1);
